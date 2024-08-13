@@ -1,4 +1,4 @@
-# ?? PiluVim
+# 🤠 PiluVim
 
 O template de start do meu nvim, baseado no [LazyVim](https://github.com/LazyVim/LazyVim).
 

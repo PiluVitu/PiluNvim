@@ -169,4 +169,11 @@ return {
 		ft = { "go", "gomod" },
 		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
 	},
+  {
+        "mzlogin/vim-markdown-toc",
+        config = function()
+            -- Configura‡äes opcionais podem ir aqui, se precisar.
+            vim.g.vmt_auto_update_on_save = 1  -- Atualiza o TOC automaticamente ao salvar
+        end
+    },
 }

@@ -76,3 +76,11 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
   nvim
 '
 ```
+
+## Debugs
+
+- Local direcionado a aglutinar resolução de bugs que tive com o nvim e seus plugins
+
+### Copilot chat
+
+[Erro 23 na response](https://github.com/CopilotC-Nvim/CopilotChat.nvim/discussions/382#discussioncomment-10196187)

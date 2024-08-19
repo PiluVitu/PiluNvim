@@ -2,6 +2,17 @@
 
 O template de start do meu nvim, baseado no [LazyVim](https://github.com/LazyVim/LazyVim).
 
+## Dependências
+
+- Golang
+- C Compiler `sudo apt install build-essential`
+- Ripgrep `sudo apt install ripgrep`
+- fd find `sudo apt install fd-find`
+- [lazygit](https://github.com/PiluVitu/wsl-setup-guide?tab=readme-ov-file#lazygit)
+- unzip `sudo apt install unzip`
+- Latex `sudo apt install texlive-full`
+- fzf `sudo apt install fzf`
+
 ## Como instalar o template no
 
 ### Linux / MacOS

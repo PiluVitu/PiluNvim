@@ -21,13 +21,32 @@ return {
 				hsl_color = {
 					pattern = "hsl%(%d+,? %d+%%?,? %d+%%?%)",
 					group = function(_, match)
-						local utils = require("solarized-osaka.hsl")
-						--- @type string, string, string
+						local hsl_to_hex = function(h, s, l)
+							-- Actually convert h, s, l numbers into hex color in '#RRGGBB' format
+							return "#111111"
+						end --- @type string, string, string
 						local nh, ns, nl = match:match("hsl%((%d+),? (%d+)%%?,? (%d+)%%?%)")
 						--- @type number?, number?, number?
 						local h, s, l = tonumber(nh), tonumber(ns), tonumber(nl)
 						--- @type string
-						local hex_color = utils.hslToHex(h, s, l)
+						local hex_color = hsl_to_hex(h, s, l)
+						return MiniHipatterns.compute_hex_color_group(hex_color, "bg")
+					end,
+				},
+				css_hsl_color = {
+					-- Ajuste do padrão para variáveis CSS com HSL
+					pattern = "%-%-[%w%-]+:%s*(%d+%.?%d*)%s+(%d+%.?%d*)%%?%s+(%d+%.?%d*)%%?",
+					group = function(_, match)
+						local hsl_to_hex = function(h, s, l)
+							-- Actually convert h, s, l numbers into hex color in '#RRGGBB' format
+							return "#111111"
+						end
+						-- Captura os valores de hue, saturation, e lightness
+						local nh, ns, nl = match:match("(%d+%.?%d*)%s+(%d+%.?%d*)%%?%s+(%d+%.?%d*)%%?")
+						-- Converte para números
+						local h, s, l = tonumber(nh), tonumber(ns), tonumber(nl)
+						-- Converte para cor hexadecimal
+						local hex_color = hsl_to_hex(h, s, l)
 						return MiniHipatterns.compute_hex_color_group(hex_color, "bg")
 					end,
 				},
